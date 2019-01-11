@@ -1,0 +1,23 @@
+{
+  "name": "templat-amp-story",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ithinkihaveacat/templat-amp-story.git"
+  },
+  "author": "Michael Stillwell",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/ithinkihaveacat/templat-amp-story/issues"
+  },
+  "homepage": "https://github.com/ithinkihaveacat/templat-amp-story#readme"
+}

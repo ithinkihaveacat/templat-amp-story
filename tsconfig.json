@@ -1,0 +1,27 @@
+{
+  // To compile by hand, do something like:
+  //
+  // node_modules/.bin/tsc --target es6 --module commonjs path/filename.ts
+  //
+  // You may need to add many more <reference path="..."/> elements
+  // than you're expecting--when transpiling the whole lot, a single
+  // reference seems to be shared across everything.
+
+  // https://www.typescriptlang.org/docs/handbook/compiler-options.html
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "moduleResolution": "node",
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "jsx": "react",
+    // "jsxFactory": "h"
+    // "noImplicitReturns": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+  ]
+}
