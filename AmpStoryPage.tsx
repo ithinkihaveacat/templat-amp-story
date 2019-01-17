@@ -9,14 +9,14 @@ export enum Theme {
 type URL = string;
 
 interface Base {
-  theme: Theme,
+  theme: Theme;
   children?: {
-    [k: string]: any
-  }
+    [k: string]: any;
+  };
 }
 
 interface London extends Base {
-  theme: Theme.London,
+  theme: Theme.London;
   background: URL;
 }
 
