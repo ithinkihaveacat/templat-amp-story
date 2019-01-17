@@ -5,6 +5,9 @@
 
 declare namespace JSX {
   interface IntrinsicElements {
-      [elemName: string]: any;
+    [elemName: string]: {
+      [k: string]: string | number | { __html: string } | undefined;
+      dangerouslysetinnerhtml?: { __html: string };
+    };
   }
 }

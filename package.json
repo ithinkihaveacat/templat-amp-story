@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/ithinkihaveacat/templat-amp-story/issues"
   },
-  "homepage": "https://github.com/ithinkihaveacat/templat-amp-story#readme"
+  "homepage": "https://github.com/ithinkihaveacat/templat-amp-story#readme",
+  "prettier": {
+    "jsxBracketSameLine": true
+  }
 }

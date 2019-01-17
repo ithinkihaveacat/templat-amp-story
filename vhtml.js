@@ -30,27 +30,37 @@ function h(name, attrs) {
 		return name(attrs);
 	}
 
+	var innerHTML = null;
+
 	var s = name ? '<' + name : '';
-	if (name && attrs) for (var _i in attrs) {
+	if (attrs) for (var _i in attrs) {
 		if (attrs[_i] !== false && attrs[_i] != null) {
-			s += ' ' + (DOMAttributeNames[_i] ? DOMAttributeNames[_i] : esc(_i)) + '="' + esc(attrs[_i]) + '"';
+			if (_i.toLowerCase() === 'dangerouslysetinnerhtml') {
+				innerHTML = attrs[_i].__html ? attrs[_i].__html : '';
+			} else {
+				s += ' ' + (DOMAttributeNames[_i] ? DOMAttributeNames[_i] : esc(_i)) + '="' + esc(attrs[_i]) + '"';
+			}
 		}
 	}
 
 	if (emptyTags.indexOf(name) === -1) {
 		s += name ? '>' : '';
 
-		while (stack.length) {
-			var child = stack.pop();
-			if (child) {
-				if (child.pop) {
-					for (var _i2 = child.length; _i2--;) {
-						stack.push(child[_i2]);
+		if (innerHTML === null) {
+			while (stack.length) {
+				var child = stack.pop();
+				if (child) {
+					if (child.pop) {
+						for (var _i2 = child.length; _i2--;) {
+							stack.push(child[_i2]);
+						}
+					} else {
+						s += sanitized[child] === true ? child : esc(child);
 					}
-				} else {
-					s += sanitized[child] === true ? child : esc(child);
 				}
 			}
+		} else {
+			s += innerHTML;
 		}
 
 		s += name ? '</' + name + '>' : '';

@@ -9,6 +9,11 @@ export default ({
 }: {
   [k: string]: any;
 }) => {
+  const AMP_BOILERPLATE = `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`;
+  const AMP_CUSTOM = `
+    amp-story { font-family: Go, "Concert One", sans-serif; }
+    amp-story-page * { color: white; text-align: center; }
+  `;
   return (
     <html amp="" lang="en">
       <head>
@@ -32,14 +37,8 @@ export default ({
           name="viewport"
           content="width=device-width,minimum-scale=1,initial-scale=1"
         />
-        {/* prettier-ignore */}
-        <style amp-boilerplate="">body&#123;-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both&#125;@-webkit-keyframes -amp-start&#123;from&#123;visibility:hidden&#125;to&#123;visibility:visible&#125;&#125;@-moz-keyframes -amp-start&#123;from&#123;visibility:hidden&#125;to&#123;visibility:visible&#125;&#125;@-ms-keyframes -amp-start&#123;from&#123;visibility:hidden&#125;to&#123;visibility:visible&#125;&#125;@-o-keyframes -amp-start&#123;from&#123;visibility:hidden&#125;to&#123;visibility:visible&#125;&#125;@keyframes -amp-start&#123;from&#123;visibility:hidden&#125;to&#123;visibility:visible&#125;&#125;</style>
-        {/* prettier-ignore */}
-        <noscript><style amp-boilerplate="">body&#123;-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none&#125;</style></noscript>
-        <style amp-custom="">
-          amp-story &#123; font-family: Go, "Concert One", sans-serif; &#125;
-          amp-story-page * &#123; color: white; text-align: center; &#125;
-        </style>
+        <React.Fragment dangerouslysetinnerhtml={{ __html: AMP_BOILERPLATE }} />
+        <style amp-custom="" dangerouslysetinnerhtml={{ __html: AMP_CUSTOM }} />
       </head>
       <body>
         <amp-story
@@ -47,8 +46,7 @@ export default ({
           title={title}
           publisher={publisher}
           publisher-logo-src={publisher_logo_src}
-          poster-portrait-src={poster_portrait_src}
-        >
+          poster-portrait-src={poster_portrait_src}>
           {children}
         </amp-story>
       </body>

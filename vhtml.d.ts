@@ -10,4 +10,8 @@
 
 export = h;
 
-declare function h(name: string|null, attrs: { [k: string]: string }|null, ...children: string[]): string;
+declare function h(
+  name: string | null,
+  attrs: { [k: string]: any } | null,
+  ...children: string[]
+): string;

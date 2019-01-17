@@ -13,5 +13,14 @@ import h = require("./vhtml");
 
 export const React = {
   createElement: h,
-  Fragment: ({ children }: { children: string[] }) => h(null, null, ...children),
+  Fragment: ({
+    children,
+    dangerouslysetinnerhtml
+  }: {
+    children?: string[];
+    dangerouslysetinnerhtml?: { __html: string };
+  }) =>
+    children
+      ? h(null, { dangerouslysetinnerhtml }, ...children)
+      : h(null, { dangerouslysetinnerhtml })
 };
