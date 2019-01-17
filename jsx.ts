@@ -7,7 +7,7 @@ import h = require("./vhtml");
 // How to generate vhtml.js?
 //
 // git clone git@github.com:ithinkihaveacat/vhtml.git
-// git checkout support-fragments
+// git checkout combi
 // npm i
 // cp dist/vhtml.js ~/workspace/beebo-site
 
