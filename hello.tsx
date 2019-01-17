@@ -1,5 +1,5 @@
 import AmpStory from "./AmpStory";
-import {Theme, AmpStoryPage} from "./AmpStoryPage";
+import { Theme, AmpStoryPage } from "./AmpStoryPage";
 
 import { React } from "./jsx";
 
