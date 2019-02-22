@@ -1,0 +1,432 @@
+:root {
+  --yellow: #ffd200;
+  --transparent: rgba(0, 0, 0, 0);
+  --black: rgba(0, 0, 0, 1);
+}
+
+amp-story {
+  color: #eaeaea;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+}
+
+amp-story .horiz {
+  display: flex;
+  flex-direction: row;
+}
+
+amp-story .horiz::before,
+amp-story .horiz::after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 0.0625em solid #fff;
+  margin: auto;
+}
+
+amp-story .horiz::before {
+  margin-right: 2.3rem;
+}
+
+amp-story .horiz::after {
+  margin-left: 2.3rem;
+}
+
+amp-story h2 {
+  color: var(--yellow);
+  font-size: 6.8vw;
+  font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: -2vw;
+}
+
+amp-story h3 {
+  font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+amp-story p {
+  font-size: 3.3vw;
+  line-height: 4.9vw;
+  letter-spacing: 0.1vw;
+}
+
+amp-story .yellow {
+  color: var(--yellow);
+}
+
+/* PAGE 01: COVER - THE MARS CRUISE */
+amp-story-page.cover {
+  background-color: #71311c;
+}
+
+amp-story-page.cover[active] .bkgd {
+  animation-name: coverPan;
+  animation-duration: 30s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+}
+
+amp-story-page.cover .gradient {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 34%,
+    black 100%
+  );
+}
+
+amp-story-page.cover .copy-layer {
+  margin: 0 auto;
+  padding: 0 14vw 12vw;
+  align-content: flex-end;
+}
+
+amp-story-page.cover h1 {
+  color: #fff;
+  font-size: 19.4vw;
+  font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 20vw;
+}
+
+amp-story-page.cover .horiz {
+  padding: 0 2vw;
+  font-size: 7.5vw;
+  font-weight: 700;
+  font-style: italic;
+  font-family: "Tienne", serif;
+}
+
+amp-story-page.cover .yellow {
+  font-size: 25vw;
+  display: block;
+}
+
+amp-story-page.cover p {
+  font-size: 4.2vw;
+  line-height: 6.3vw;
+  text-align: left;
+  padding: 0 3vw;
+}
+
+/* PAGE 02: THE JOURNEY */
+amp-story-page.journey {
+  background-color: black;
+}
+
+amp-story-page.journey .copy-layer {
+  padding: 12.8vw 21vw;
+}
+
+amp-story-page.journey h2 {
+  margin-bottom: -1vw;
+}
+
+/*
+  * PAGE 04: TRIP HIGHLIGHTS
+  * Stylelint requires `#trip-highlights` styles before `amp-story-page.what-to-bring`
+  */
+#trip-highlights {
+  background-color: #000;
+}
+
+#trip-highlights .icons {
+  padding: 0;
+}
+
+#trip-highlights .icons > div {
+  opacity: 0;
+  width: auto;
+  position: absolute;
+  align-content: flex-start;
+}
+
+#trip-highlights h3 {
+  width: 0;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#trip-highlights h3 span {
+  padding: 1vw 2vw 0.7vw;
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: black;
+}
+
+#trip-highlights .pin {
+  top: 7vw;
+  left: 10vw;
+}
+
+#trip-highlights .pin amp-img {
+  width: 14vw;
+  height: 20vw;
+}
+
+#trip-highlights .pin h3 {
+  font-size: 2.7vw;
+  animation-delay: 1s;
+  margin-top: -6.7vw;
+  margin-left: 13vw;
+}
+
+#trip-highlights .flag {
+  top: 68.1vw;
+  left: 9.2vw;
+  animation-delay: 0.15s;
+}
+
+#trip-highlights .flag amp-img {
+  width: 7vw;
+  height: 8vw;
+  margin-top: -7.7vw;
+  margin-left: -1vw;
+}
+
+#trip-highlights .flag h3 {
+  font-size: 1.9vw;
+  margin-top: 1.3vw;
+  margin-left: -2.4vw;
+  animation-delay: 1s;
+}
+
+#trip-highlights .resort {
+  top: 86.3vw;
+  left: 52.9vw;
+  animation-delay: 0.4s;
+}
+
+#trip-highlights .resort amp-img {
+  width: 8vw;
+  height: 14vw;
+  margin-top: -13.8vw;
+  margin-left: -4.1vw;
+}
+
+#trip-highlights .resort h3 {
+  font-size: 1.9vw;
+  margin-top: -4.6vw;
+  margin-left: 5vw;
+  animation-delay: 1s;
+}
+
+#trip-highlights .video-wrapper {
+  padding-right: 14.6vw;
+  padding-left: 24.5vw;
+  padding-top: 28.4vw;
+}
+
+#trip-highlights .video-wrapper .video {
+  padding: 0.375em;
+  background-color: rgba(255, 255, 255, 0.21);
+}
+
+#trip-highlights .copy-layer {
+  margin: 0 auto;
+  padding: 0 19vw 16.3vw;
+  max-width: 65%;
+  align-content: flex-end;
+}
+
+#trip-highlights[active] .icons > div {
+  animation-name: dropIn;
+  animation-duration: 0.65s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+}
+
+#trip-highlights[active] .icons h3 {
+  animation-name: wipeRight;
+  animation-duration: 0.65s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+}
+
+/*
+  * PAGE 03: WHAT TO BRING
+  * Stylelint requires `#trip-highlights` styles before `amp-story-page.what-to-bring`
+  */
+amp-story-page.what-to-bring {
+  background-color: #0b0309;
+}
+
+amp-story-page.what-to-bring .suitcase-wrapper {
+  padding: 22vh 0 0;
+}
+
+amp-story-page.what-to-bring .suitcase-wrapper amp-img {
+  width: 100%;
+  position: absolute;
+}
+
+amp-story-page.what-to-bring .mars-wrapper {
+  padding: 0;
+  align-content: flex-end;
+}
+
+amp-story-page.what-to-bring[active] .mars-wrapper amp-img {
+  animation-name: marsRising;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+}
+
+amp-story-page.what-to-bring .copy-layer {
+  align-content: flex-end;
+  padding: 0 19.6vw 12vh;
+}
+
+/* PAGE 05: ROVER TOURS */
+#rover-tours {
+  background-color: #775444;
+}
+
+#rover-tours .button-container {
+  align-content: flex-end;
+  padding: 0 19.6vw 2.4vw;
+}
+
+#rover-tours .copy-layer {
+  padding: 15.6vw 21.5vw;
+}
+
+#rover-tours h2 {
+  margin-bottom: 0;
+}
+
+/* PAGE 05B: ROVER 360 */
+#rover-360 {
+  background-color: #151515;
+}
+
+/* PAGE 06: LAST PAGE - WE CAN'T WAIT TO HAVE YOU ABOARD */
+amp-story-page.cantwait {
+  background-color: black;
+}
+
+amp-story-page.cantwait .copy-layer {
+  padding: 12.4vw 24vw 10vw;
+  text-align: center;
+}
+
+amp-story-page.cantwait h2 {
+  color: var(--yellow);
+  font-size: 8.6vw;
+  font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+}
+
+amp-story-page.cantwait .last {
+  font-size: 7.2vw;
+}
+
+amp-story-page.cantwait .italic {
+  color: #fff;
+  font-size: 5vw;
+  font-weight: 700;
+  font-style: italic;
+  font-family: "Tienne", serif;
+  text-transform: initial;
+  margin-bottom: 1.5vw;
+}
+
+amp-story-page.cantwait[active] .mars {
+  animation-name: endMars;
+  animation-duration: 30s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+}
+
+amp-story-page.cantwait[active] .astronaut {
+  animation-name: endAstronaut;
+  animation-duration: 30s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+}
+
+@keyframes coverPan {
+  0% {
+    transform: translate(2.5rem, 4.1875rem) scale(1.25);
+  }
+
+  100% {
+    transform: translate(-2.5rem, 0.625rem) scale(1.35);
+  }
+}
+
+@keyframes marsRising {
+  0% {
+    opacity: 0;
+    transform: translate(0, 1.0625rem) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0.625rem) scale(1.15);
+  }
+}
+
+@keyframes endMars {
+  0% {
+    transform: translate(0.775rem, 0.775rem) scale(1.2);
+  }
+
+  100% {
+    transform: translate(-0.4375rem, -0.375rem) scale(1.3);
+  }
+}
+
+@keyframes endAstronaut {
+  0% {
+    transform: translate(1.8375rem, 2.775rem) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-1.5rem, 0.375rem) scale(1.2);
+  }
+}
+
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-34.375rem);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes wipeRight {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
